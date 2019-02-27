@@ -86,7 +86,6 @@ module.exports = {
         include_favicon: true, // Include favicon
       },
     },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-netlify' // make sure to keep it last in the array
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
