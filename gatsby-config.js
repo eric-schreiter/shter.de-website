@@ -74,58 +74,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "GatsbyJS",
-        short_name: "GatsbyJS",
-        start_url: "/",
-        background_color: "#6b37bf",
-        theme_color: "#6b37bf",
+        name: `shter.de`,
+        short_name: `shter.de`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: "standalone",
-        icon: "src/img/icon.png", // This path is relative to the root of the site.
-        // An optional attribute which provides support for CORS check.
-        // If you do not provide a crossOrigin option, it will skip CORS for manifest.
-        // Any invalid keyword or empty string defaults to `anonymous`
-        crossOrigin: `use-credentials`,
+        display: `standalone`,
+        icon: `src/img/icon.png`, // This path is relative to the root of the site.
+        include_favicon: true, // Include favicon
       },
-      {
-        resolve: `gatsby-plugin-manifest`,
-        const options = {
-          importWorkboxFrom: `local`,
-          globDirectory: rootDir,
-          globPatterns,
-          modifyUrlPrefix: {
-            // If `pathPrefix` is configured by user, we should replace
-            // the default prefix with `pathPrefix`.
-            "/": `${pathPrefix}/`,
-          },
-          cacheId: `gatsby-plugin-offline`,
-          // Don't cache-bust JS or CSS files, and anything in the static directory,
-          // since these files have unique URLs and their contents will never change
-          dontCacheBustUrlsMatching: /(\.js$|\.css$|static\/)/,
-          runtimeCaching: [
-            {
-              // Use cacheFirst since these don't need to be revalidated (same RegExp
-              // and same reason as above)
-              urlPattern: /(\.js$|\.css$|static\/)/,
-              handler: `cacheFirst`,
-            },
-            {
-              // Add runtime caching of various other page resources
-              urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
-              handler: `staleWhileRevalidate`,
-            },
-            {
-              // Google Fonts CSS (doesn't end in .css so we need to specify it)
-              urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
-              handler: `staleWhileRevalidate`,
-            },
-          ],
-          skipWaiting: true,
-          clientsClaim: true,
-        }
-      },
-    'gatsby-plugin-offline',
+    },
+    'gatsby-plugin-offline'
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }
