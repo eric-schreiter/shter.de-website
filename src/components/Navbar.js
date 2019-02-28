@@ -30,7 +30,6 @@ const Navbar = class extends React.Component {
  
  render() {
    return (
-  <noscript>Sorry, your browser does not support JavaScript!</noscript>
   <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
     <div className="container">
       <div className="navbar-brand">
